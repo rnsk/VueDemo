@@ -13,7 +13,13 @@
         </template>
 
         <template slot="end">
-            <b-navbar-item>
+            <b-navbar-item href="https://twitter.com/rnosuke">
+                <b-icon
+                    pack="fab"
+                    icon="twitter">
+                </b-icon>
+            </b-navbar-item>
+            <b-navbar-item href="https://github.com/rnsk/VueDemo">
                 <b-icon
                     pack="fab"
                     icon="github">
