@@ -22,6 +22,11 @@ export default new Router({
       component: () => import('./views/Preview.vue')
     },
     {
+      path: '/camera',
+      name: 'camera',
+      component: () => import('./views/Camera.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
