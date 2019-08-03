@@ -17,6 +17,11 @@ export default new Router({
       component: () => import('./views/Search.vue')
     },
     {
+      path: '/preview',
+      name: 'preview',
+      component: () => import('./views/Preview.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
