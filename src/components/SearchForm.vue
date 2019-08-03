@@ -5,7 +5,7 @@
             <div class="control">
                 <input class="input" type="text" placeholder="Post ID" v-model="q" @input="onInput">
             </div>
-            <p class="help">検索先API: <a href="https://jsonplaceholder.typicode.com/comments">https://jsonplaceholder.typicode.com/</a></p>
+            <p class="help">検索先API: <a href="https://jsonplaceholder.typicode.com/comments">JSONPlaceholder</a></p>
         </div>
         <hr>
     </div>
