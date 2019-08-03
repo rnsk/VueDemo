@@ -1,17 +1,30 @@
 <template>
   <div id="app">
     <Navbar />
-    <router-view/>
+    <div class="columns">
+      <div class="column is-one-quarter has-background-light">
+        <section class="section">
+          <Sidebar />
+        </section>
+      </div>
+      <div class="column">
+        <section class="section">
+          <router-view/>
+        </section>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Navbar from './components/layout/Navbar';
+import Sidebar from './components/layout/Sidebar';
 
 export default {
   name: 'app',
   components: {
-    Navbar
+    Navbar,
+    Sidebar
   }
 }
 </script>
