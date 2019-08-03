@@ -1,5 +1,5 @@
 <template>
     <ul>
-        <li>リンク</li>
+        <li><router-link to="/search">Search</router-link></li>
     </ul>
 </template>
