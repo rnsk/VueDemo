@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import "~bulma/sass/utilities/_all";
-@import "~bulma";
+// @import "~bulma/sass/utilities/_all";
+// @import "~bulma";
+@import '~bulmaswatch/lux/bulmaswatch.min';
 </style>
