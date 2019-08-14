@@ -1,5 +1,11 @@
 <template>
     <div class="camera">
+        <p class="has-text-danger">
+            <span class="icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </span>
+            Not supported iOS Safari.
+        </p>
         <video ref="preview" id="preview" width="640" height="480" autoplay></video>
         <p>
             <b-button
@@ -65,9 +71,16 @@ export default {
                     this.preview.play()
                 })
                 .then(() => {
-                    this.recorder = new MediaRecorder(
-                        this.preview.captureStream(),
-                        { mimeType: 'video/webm;codecs=vp9' })
+                    let options;
+                    if (MediaRecorder.isTypeSupported('video/webm;codecs=vp9')) {
+                        options = { mimeType: 'video/webm; codecs=vp9' };
+                    } else if (MediaRecorder.isTypeSupported('video/webm;codecs=vp8')) {
+                        options = { mimeType: 'video/webm; codecs=vp8' };
+                    } else {
+                        options = { mimeType: 'video/webm' };
+                    }
+                    // iOS Safari では対応していない
+                    this.recorder = new MediaRecorder(this.preview.captureStream(), options)
                     this.recorder.ondataavailable = this.recording
                     this.recorder.start()
                 })
@@ -114,6 +127,7 @@ export default {
 </script>
 
 <style scoped>
+#preview,
 #video {
     background-color: #000;
 }
