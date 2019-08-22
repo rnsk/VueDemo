@@ -32,6 +32,11 @@ export default new Router({
       component: () => import('./views/Camera.vue')
     },
     {
+      path: '/midi',
+      name: 'midi',
+      component: () => import('./views/Midi.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
