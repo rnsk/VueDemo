@@ -26,6 +26,8 @@ export default {
     }
   },
   mounted() {
+    // 音の種類によって変更する
+    // https://tonejs.github.io/docs/r13/Synth
     this.synth = new Tone.Synth().toMaster();
   },
   methods: {
@@ -56,6 +58,7 @@ export default {
       console.error('error!!!', error);
     },
     onMIDIMessage(message) {
+      // [ノートオン信号／チャンネル, ノートナンバー, 音の強弱]
       console.log(message.data);
     }
   }
